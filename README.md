@@ -118,7 +118,7 @@ To generate the above results on synthetic data run:
 If you use this code in your research, please cite our paper:
 
 ```bibtex
-@proceedings{westphal2025partial,
+@inproceedings{westphal2025partial,
       title={Partial Information Decomposition for Data Interpretability and Feature Selection}, 
       author={Charles Westphal and Stephen Hailes and Mirco Musolesi},
       year={2025},
