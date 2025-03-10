@@ -110,8 +110,6 @@ To generate the above results on synthetic data run:
 
 ## Datasets
 
-BRCA: 
-Neurons: 
 - **BRCA:** [Download Link](https://github.com/HydroML/UMFI)
 - **Neurons:** [Download Link](https://potterlab.gatech.edu/potter-lab-data-code-and-designs/)
 
