@@ -18,9 +18,7 @@ This repository contains the code used to generate the results presented in the 
 ## Introduction
 
 This repository contains the code used to generate the results in our work on Partial Information Decomposition for Data Interpretability and Feature Selection. Our method, PIDF, offers a novel approach to understanding how features interact to predict a target. Unlike traditional feature importance techniques that assign a single importance value to each feature, PIDF breaks down the information into three distinct components. Specifically, it quantifies the mutual information between a feature and the target, the synergistic information that a feature produces in conjunction with other features, and the redundant information shared among features. By clearly presenting these three quantities as shown in the following schematic, PIDF provides insights into feature interactions that enhance both interpretability and feature selection.
- 
- ![CWgraph (1).pdf](https://github.com/user-attachments/files/19166260/CWgraph.1.pdf)
-30a-f55d135d0d57)
+ ![CWgraph](https://github.com/user-attachments/assets/45e01550-5e9c-4976-b4a4-a5918ee45c38)
 
 ## Installation
 
@@ -46,7 +44,8 @@ This repository contains the code used to generate the results in our work on Pa
 
 ### Synthetic Data Experiments
 Results:
-[all_datasets (6).pdf](https://github.com/user-attachments/files/19166671/all_datasets.6.pdf)
+![all_datasets](https://github.com/user-attachments/assets/63750bd1-3385-4e3d-92c0-8139e2d861b0)
+
 To generate the above results on synthetic data run:
 
     ```bash
@@ -62,7 +61,7 @@ To generate the above results on synthetic data run:
 ### Housing Experiments
 
 Results:
-[housing.pdf](https://github.com/user-attachments/files/19166801/housing.pdf)
+![housing](https://github.com/user-attachments/assets/4dbe75cf-159d-42e1-8bee-a0dfef6d2b23)
 To generate the above results on housing data run:
 
     ```bash
@@ -71,7 +70,7 @@ To generate the above results on housing data run:
 ### BRCA Experiments
 
 Results:
-[housing.pdf](https://github.com/user-attachments/files/19166801/housing.pdf)
+![brca_small](https://github.com/user-attachments/assets/c200ed1e-0dcb-4724-a467-058a6cb12552)
 To generate the above results on BRCA data run:
 
     ```bash
@@ -80,7 +79,7 @@ To generate the above results on BRCA data run:
 ### Neurons Experiments
 
 Results:
-[neurons_average_line (1).pdf](https://github.com/user-attachments/files/19166835/neurons_average_line.1.pdf)
+![neurons_average_line](https://github.com/user-attachments/assets/64cb0f2b-6c27-4075-ab5c-7a1fa50d8be8)
 To generate the above results on neuron data run the following with multiple seeds:
 
     ```bash
