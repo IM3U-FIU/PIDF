@@ -18,6 +18,7 @@ This repository contains the code used to generate the results presented in the 
 ## Introduction
 
 This repository contains the code used to generate the results in our work on Partial Information Decomposition for Data Interpretability and Feature Selection. Our method, PIDF, offers a novel approach to understanding how features interact to predict a target. Unlike traditional feature importance techniques that assign a single importance value to each feature, PIDF breaks down the information into three distinct components. Specifically, it quantifies the mutual information between a feature and the target, the synergistic information that a feature produces in conjunction with other features, and the redundant information shared among features. By clearly presenting these three quantities as shown in the following schematic, PIDF provides insights into feature interactions that enhance both interpretability and feature selection.
+ 
  ![CWgraph](https://github.com/user-attachments/assets/45e01550-5e9c-4976-b4a4-a5918ee45c38)
 
 ## Installation
