@@ -46,7 +46,7 @@ This repository contains the code used to generate the results in our work on Pa
 ### Synthetic Data Experiments
 Results:
 
-![all_datasets](https://github.com/user-attachments/assets/63750bd1-3385-4e3d-92c0-8139e2d861b0)
+![all_datasets](https://github.com/user-attachments/assets/5fc7c2ab-5a65-4335-b31a-0e6a3d07941e)
 
 To generate the above results on synthetic data run:
 
@@ -75,7 +75,7 @@ To generate the above results on housing data run:
 
 Results:
 
-![Figure_brca_small](https://github.com/user-attachments/assets/fed16301-2457-4056-a9d5-e5d9091dcf86)
+![brca_small](https://github.com/user-attachments/assets/c9dc73d1-ad39-4c50-8993-610ef57d15a2)
 
 To generate the above results on BRCA data run:
 
