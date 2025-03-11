@@ -45,6 +45,7 @@ This repository contains the code used to generate the results in our work on Pa
 
 ### Synthetic Data Experiments
 Results:
+
 ![all_datasets](https://github.com/user-attachments/assets/63750bd1-3385-4e3d-92c0-8139e2d861b0)
 
 To generate the above results on synthetic data run:
@@ -62,7 +63,9 @@ To generate the above results on synthetic data run:
 ### Housing Experiments
 
 Results:
-![housing](https://github.com/user-attachments/assets/4dbe75cf-159d-42e1-8bee-a0dfef6d2b23)
+
+![housing](https://github.com/user-attachments/assets/9ab5e013-7275-4bf4-8c23-ab897ebbf0ba)
+
 To generate the above results on housing data run:
 
     ```bash
@@ -71,7 +74,9 @@ To generate the above results on housing data run:
 ### BRCA Experiments
 
 Results:
-![brca_small](https://github.com/user-attachments/assets/c200ed1e-0dcb-4724-a467-058a6cb12552)
+
+![Figure_brca_small](https://github.com/user-attachments/assets/fed16301-2457-4056-a9d5-e5d9091dcf86)
+
 To generate the above results on BRCA data run:
 
     ```bash
@@ -80,7 +85,9 @@ To generate the above results on BRCA data run:
 ### Neurons Experiments
 
 Results:
-![neurons_average_line](https://github.com/user-attachments/assets/64cb0f2b-6c27-4075-ab5c-7a1fa50d8be8)
+
+![neurons_average_line](https://github.com/user-attachments/assets/f890bbd3-e69a-4a0a-9a3b-929b0916a9da)
+
 To generate the above results on neuron data run the following with multiple seeds:
 
     ```bash
