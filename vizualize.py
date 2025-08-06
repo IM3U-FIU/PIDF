@@ -12,9 +12,12 @@ def visualize_pidf(name):
     Loads and plots the 'PIDF' bar plot for a given dataset (name).
     """
     # Load the base data
-    data = np.load(f'interpretability_{name}.npy', allow_pickle=True)
-    std_data = np.load(f'interpretability_std_{name}.npy', allow_pickle=True)
-    captions_data = np.load(f'syns_and_reds_{name}.npy', allow_pickle=True)
+    with open(f'interpretability_{name}.pickle', 'rb') as h:
+        data = pickle.load(h)
+    with open(f'interpretability_std_{name}.pickle', 'rb') as h:
+        std_data = pickle.load(h)
+    with open(f'syns_and_reds_{name}.pickle', 'rb') as h:
+        captions_data = pickle.load(h)
     
     # Convert all values to absolute for proper scaling
     for k in range(len(data)):
