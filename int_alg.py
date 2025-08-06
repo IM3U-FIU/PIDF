@@ -2,6 +2,7 @@ import numpy as np
 from mine import mine, mine_fa
 import math
 import os
+import pickle
 
 class int_alg_per_varb:
     def __init__(self, obs, acs, chosen_varb, mines, mines_std, num_iterations, scalable=True):
@@ -292,9 +293,9 @@ class int_alg_mnist:
         syns_n_reds_shape = (num_vars, 2)  # [Synergistic variables, Redundant variables]
 
         # File paths
-        data_file = f'interpretability_{self.name}{self.num_iterations}.npy'
-        data_std_file = f'interpretability_std_{self.name}{self.num_iterations}.npy'
-        syns_n_reds_file = f'syns_and_reds_{self.name}{self.num_iterations}.npy'
+        data_file = f'interpretability_{self.name}{self.num_iterations}.pickle'
+        data_std_file = f'interpretability_std_{self.name}{self.num_iterations}.pickle'
+        syns_n_reds_file = f'syns_and_reds_{self.name}{self.num_iterations}.pickle'
 
         # Load or initialize data arrays
         if os.path.exists(data_file):
@@ -318,8 +319,15 @@ class int_alg_mnist:
         syns_n_reds_array[chosen_varb, 0] = func.synergistic
         syns_n_reds_array[chosen_varb, 1] = func.redundants
 
-        # Save the updated arrays back to the files
-        np.save(data_file, data_array)
-        np.save(data_std_file, data_std_array)
-        np.save(syns_n_reds_file, syns_n_reds_array)
+        # Save the updated "arrays" back to the files
+        with open(data_file, 'wb') as h:
+            pickle.dump(data_array, h)
+        with open(data_std_file, 'wb') as h:
+            pickle.dump(data_std_array, h)
+        with open(syns_n_reds_file, 'wb') as h:
+            pickle.dump(syns_n_reds_array, h)
+            
+        # np.save(data_file, data_array)
+        # np.save(data_std_file, data_std_array)
+        # np.save(syns_n_reds_file, syns_n_reds_array)
 
