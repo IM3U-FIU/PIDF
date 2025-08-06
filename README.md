@@ -26,14 +26,9 @@ This repository contains the code used to generate the results in our work on Pa
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/c-s-westphal/PIDF.git
+   git clone https://github.com/IM3U-FIU/PIDF.git
    cd PIDF
 
-2. **Create Virtual Environment:**
-
-   ```bash
-   python3 -m PIDF_venv venv
-   source PIDFD_venv/bin/activate
 
 3. **Install Required Packages:**
 
@@ -51,14 +46,14 @@ Results:
 To generate the above results on synthetic data run:
 
     ```bash
-    python main.py --name RVQ --num_iters 20000 --feature_selection False
-    python main.py --name SVQ --num_iters 20000 --feature_selection False
-    python main.py --name MSP --num_iters 20000 --feature_selection False
-    python main.py --name WT --num_iters 20000 --feature_selection False
-    python main.py --name TERC1 --num_iters 20000 --feature_selection False
-    python main.py --name TERC2 --num_iters 20000 --feature_selection False
-    python main.py --name UBR --num_iters 20000 --feature_selection False
-    python main.py --name SG --num_iters 20000 --feature_selection False
+    python main.py RVQ 20000 False
+    python main.py SVQ 20000 False
+    python main.py MSP 20000 False
+    python main.py WT 20000 False
+    python main.py TERC1 20000 False
+    python main.py TERC2 20000 False
+    python main.py UBR 20000 False
+    python main.py SG 20000 False
 
 ### Housing Experiments
 
@@ -69,7 +64,7 @@ Results:
 To generate the above results on housing data run:
 
     ```bash
-    python main.py --name housing --num_iters 20000 --feature_selection False  
+    python main.py housing 20000 False  
 
 ### BRCA Experiments
 
@@ -80,7 +75,7 @@ Results:
 To generate the above results on BRCA data run:
 
     ```bash
-    python main.py --name brca_small --num_iters 20000 --feature_selection False  
+    python main.py brca_small 20000 False  
 
 ### Neurons Experiments
 
@@ -91,14 +86,14 @@ Results:
 To generate the above results on neuron data run the following with multiple seeds:
 
     ```bash
-    python main.py --name timme_neurons_day4 --num_iters 20000 --feature_selection False
-    python main.py --name timme_neurons_day7 --num_iters 20000 --feature_selection False
-    python main.py --name timme_neurons_day12 --num_iters 20000 --feature_selection False
-    python main.py --name timme_neurons_day16 --num_iters 20000 --feature_selection False
-    python main.py --name timme_neurons_day20 --num_iters 20000 --feature_selection False
-    python main.py --name timme_neurons_day25 --num_iters 20000 --feature_selection False
-    python main.py --name timme_neurons_day31 --num_iters 20000 --feature_selection False
-    python main.py --name timme_neurons_day33 --num_iters 20000 --feature_selection False
+    python main.py timme_neurons_day4 20000 False
+    python main.py timme_neurons_day7 20000 False
+    python main.py timme_neurons_day12 20000 False
+    python main.py timme_neurons_day16 20000 False
+    python main.py timme_neurons_day20 20000 False
+    python main.py timme_neurons_day25 20000 False
+    python main.py timme_neurons_day31 20000 False
+    python main.py timme_neurons_day33 20000 False
 
   These are the most computationally expensive experiments to run, we recommend you first collect results using our scalable method (set scalable=True in class init).
 
@@ -106,14 +101,14 @@ To generate the above results on neuron data run the following with multiple see
 To generate the above results on synthetic data run:
 
     ```bash
-    python main.py --name RVQ --num_iters 500 --feature_selection True
-    python main.py --name SVQ --num_iters 500 --feature_selection True
-    python main.py --name MSP --num_iters 500 --feature_selection True
-    python main.py --name WT --num_iters 500 --feature_selection True
-    python main.py --name TERC1 --num_iters 500 --feature_selection True
-    python main.py --name TERC2 --num_iters 500 --feature_selection True
-    python main.py --name UBR --num_iters 500 --feature_selection True
-    python main.py --name SG --num_iters 500 --feature_selection True
+    python main.py RVQ 500 True
+    python main.py SVQ 500 True
+    python main.py MSP 500 True
+    python main.py WT 500 True
+    python main.py TERC1 500 True
+    python main.py TERC2 500 True
+    python main.py UBR 500 True
+    python main.py SG 500 True
 
 ## Datasets
 
