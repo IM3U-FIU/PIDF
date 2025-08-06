@@ -5,7 +5,7 @@ import pickle
 from matplotlib.collections import PatchCollection
 
 # Set global plot style
-plt.rcParams['font.family'] = 'Arial'
+# plt.rcParams['font.family'] = 'Arial'
 plt.rcParams['font.size'] = 12
 
 def visualize_pidf(name):
