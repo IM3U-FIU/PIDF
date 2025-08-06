@@ -37,7 +37,7 @@ def visualize_pidf(name):
     ax.set_title(f'PIDF for dataset: {name}')
     
     plt.tight_layout()
-    plt.savefig(f'PIDF_{name}.pdf', format='pdf', bbox_inches='tight')
+    plt.savefig(f'PIDF_{name}.svg', bbox_inches='tight')
     plt.show()
 
 def setup_plot(ax, data, std_data, synergistic_captions, redundant_captions, name):
