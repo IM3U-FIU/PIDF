@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import math
+import pickle
 from matplotlib.collections import PatchCollection
 
 # Set global plot style
