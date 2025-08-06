@@ -12,6 +12,34 @@ parser.add_argument("num_iters", help="Number of iterations", type=int)
 parser.add_argument("feature_selection", help="True to run feature selection, False to run int_alg and visualize", type=bool)
 args = parser.parse_args()
 
+def alt_main(obs, acs, name="Custom", feature_selection=False,num_iters=200,scalable=False):
+  if not feature_selection:
+    # Run the int_alg and visualize branch
+    start_time = time.time()
+
+    # Run the algorithm
+    data, data_std, reds_n_syns = int_alg(obs, acs, num_iters, scalable=scalable).run()
+
+    # End timing
+    end_time = time.time()
+    time_taken = end_time - start_time
+    print(f"Time taken to run int_alg: {time_taken:.2f} seconds")
+
+    # Save results to .npy files
+    np.save(f'interpretability_{name}.npy', np.array(data))
+    np.save(f'interpretability_std_{name}.npy', np.array(data_std))
+    np.save(f'syns_and_reds_{name}.npy', np.array(reds_n_syns))
+
+    # Visualize results
+    visualize_pidf(name)
+  else:
+    # Run feature selection on the provided dataset name with the specified number of iterations.
+    start_time = time.time()
+    run_feature_selection(names=[name], num_iters=num_iters)
+    end_time = time.time()
+    time_taken = end_time - start_time
+    print(f"Time taken to run feature selection: {time_taken:.2f} seconds")
+
 
 if __name__ == "__main__":
     if not args.feature_selection:
