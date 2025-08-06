@@ -13,7 +13,7 @@ parser.add_argument("feature_selection", help="True to run feature selection, Fa
 args = parser.parse_args()
 
 def alt_main(obs, acs, name="Custom", feature_selection=False,num_iters=200,scalable=False):
-  if not feature_selection:
+  if feature_selection is False:
     # Run the int_alg and visualize branch
     start_time = time.time()
 
@@ -42,7 +42,7 @@ def alt_main(obs, acs, name="Custom", feature_selection=False,num_iters=200,scal
 
 
 if __name__ == "__main__":
-    if not args.feature_selection:
+    if args.feature_selection is False:
         # Run the int_alg and visualize branch
         obs, acs = generate_data(nme=args.name)
         start_time = time.time()
