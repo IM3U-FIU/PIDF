@@ -5,6 +5,7 @@ from feature_selection import run_feature_selection
 import argparse
 import numpy as np
 import time
+import pickle
 
 parser = argparse.ArgumentParser()
 parser.add_argument("name", help="Dataset name", type=str)
@@ -26,9 +27,12 @@ def alt_main(obs, acs, name="Custom", feature_selection=False,num_iters=200,scal
     print(f"Time taken to run int_alg: {time_taken:.2f} seconds")
 
     # Save results to .npy files
-    np.save(f'interpretability_{name}.npy', np.array(data))
-    np.save(f'interpretability_std_{name}.npy', np.array(data_std))
-    np.save(f'syns_and_reds_{name}.npy', np.array(reds_n_syns))
+    with open(f'interpretability_{args.name}.pickle', 'wb') as h:
+      pickle.dump(data, h)
+    with open(f'interpretability_std_{args.name}.pickle', 'wb') as h:
+      pickle.dump(data_std, h)
+    with open(f'syns_and_reds_{args.name}.pickle', 'wb') as h:
+      pickle.dump(reds_n_syns, h)
 
     # Visualize results
     visualize_pidf(name)
@@ -55,10 +59,13 @@ if __name__ == "__main__":
         time_taken = end_time - start_time
         print(f"Time taken to run int_alg: {time_taken:.2f} seconds")
 
-        # Save results to .npy files
-        np.save(f'interpretability_{args.name}.npy', np.array(data))
-        np.save(f'interpretability_std_{args.name}.npy', np.array(data_std))
-        np.save(f'syns_and_reds_{args.name}.npy', np.array(reds_n_syns))
+        # Save results to .pickle files
+        with open(f'interpretability_{args.name}.pickle', 'wb') as h:
+          pickle.dump(data, h)
+        with open(f'interpretability_std_{args.name}.pickle', 'wb') as h:
+          pickle.dump(data_std, h)
+        with open(f'syns_and_reds_{args.name}.pickle', 'wb') as h:
+          pickle.dump(reds_n_syns, h)
 
         # Visualize results
         visualize_pidf(args.name)
