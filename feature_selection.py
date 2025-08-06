@@ -360,7 +360,10 @@ class pidf_alg:
         for FOI_index in range(self.features.shape[-1]):
             mi, synergy, redundant_contributions, synergistic_fnoi, redundant_fnoi = self.PIDF_per_foi(self.features, self.targets, FOI_index)
             all_red_fnoi.append(redundant_fnoi)
-            mean_ti, ti_ci = self.calculate_confidence_interval(np.array(mi)+np.array(synergy), self.ci) if synergy != [] else self.calculate_confidence_interval(np.array(mi), self.ci) 
+            if synergy.shape[0] > 0:
+                mean_ti, ti_ci = self.calculate_confidence_interval(np.array(mi)+np.array(synergy), self.ci) 
+            else:
+                mean_ti, ti_ci = self.calculate_confidence_interval(np.array(mi), self.ci) 
             _, red_ci = self.calculate_confidence_interval(np.sum([np.array(red) for red in redundant_contributions], axis=0), self.ci) if redundant_contributions else (0, (0, 0))
             if ti_ci[0] > red_ci[1]:
                 print(f'FOI {FOI_index} has been included due to its information contribution')
