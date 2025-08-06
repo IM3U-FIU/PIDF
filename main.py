@@ -9,11 +9,11 @@ import time
 parser = argparse.ArgumentParser()
 parser.add_argument("name", help="Dataset name", type=str)
 parser.add_argument("num_iters", help="Number of iterations", type=int)
-parser.add_argument("feature_selection", help="True to run feature selection, False to run int_alg and visualize", type=bool)
+parser.add_argument("feature_selection", help="True to run feature selection, False to run int_alg and visualize", type=str)
 args = parser.parse_args()
 
 def alt_main(obs, acs, name="Custom", feature_selection=False,num_iters=200,scalable=False):
-  if feature_selection is False:
+  if feature_selection.find('True')==-1:
     # Run the int_alg and visualize branch
     start_time = time.time()
 
@@ -42,7 +42,7 @@ def alt_main(obs, acs, name="Custom", feature_selection=False,num_iters=200,scal
 
 
 if __name__ == "__main__":
-    if args.feature_selection is False:
+    if args.feature_selection.find('True')==-1:
         # Run the int_alg and visualize branch
         obs, acs = generate_data(nme=args.name)
         start_time = time.time()
