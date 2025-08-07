@@ -58,9 +58,9 @@ def setup_plot(ax, data, std_data, synergistic_captions, redundant_captions, nam
     
     ax.bar(
         ind - width / 2,
-        data[:, 0],
+        [i[0] for i in data],#data[:, 0],
         width,
-        yerr=std_data[:, 0] / math.sqrt(5),
+        yerr=[i[0] for i in std_data] / math.sqrt(5),#std_data[:, 0] / math.sqrt(5),
         label='MI',
         color='#ff4b4b',
         alpha=0.9,
@@ -70,10 +70,10 @@ def setup_plot(ax, data, std_data, synergistic_captions, redundant_captions, nam
     
     ax.bar(
         ind - width / 2,
-        data[:, 1],
+        [i[1] for i in data],#data[:, 1],
         width,
-        yerr=std_data[:, 1] / math.sqrt(5),
-        bottom=data[:, 0],
+        yerr=[i[1] for i in std_data] / math.sqrt(5),#std_data[:, 1] / math.sqrt(5),
+        bottom=[i[0] for i in data],#data[:, 0],
         label='FWS',
         color='#6fB46F',
         alpha=0.9,
@@ -84,8 +84,8 @@ def setup_plot(ax, data, std_data, synergistic_captions, redundant_captions, nam
     bottom_stack = np.zeros(len(data))
     colors = ['#ddb2f2', '#b95fe4', '#8d21c1']
     
-    for i, red_values in enumerate(data[:, 2]):
-        std_vals = std_data[:, 2][i]
+    for i, red_values in enumerate([i[2] for i in data]):
+        std_vals = [i[2] for i in std_data][i]
         for j, val in enumerate(red_values):
             color = colors[j % len(colors)]
             bar = ax.bar(
@@ -115,9 +115,9 @@ def setup_plot(ax, data, std_data, synergistic_captions, redundant_captions, nam
     
     synergy_bars = ax.bar(
         ind - width / 2,
-        data[:, 1],
+        [i[1] for i in data],#data[1,:],
         width,
-        bottom=data[:, 0],
+        bottom=[i[0] for i in data],#data[:, 0],
         alpha=0  # invisible, just for iteration
     )
     
