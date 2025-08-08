@@ -219,7 +219,7 @@ class int_alg:
             std = results.std(axis=0)
             self.mines.append(means)
             self.mines_std.append(std)
-            print(f'MI for varb {i} = {means[-1]}pm{std[-1]*2/math.sqrt(self.expts)}')
+            print(f'MI for varb {i} = {means[-1]} +/- {std[-1]*2/math.sqrt(self.expts)}')
 
     def run(self):
         self.get_mis()
