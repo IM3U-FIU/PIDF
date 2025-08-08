@@ -10,7 +10,7 @@ import pickle
 
 
 def alt_main(obs, acs, name="Custom", feature_selection=False,num_iters=200,scalable=False):
-  if feature_selection.find('True')==-1:
+  if feature_selection is False:
     # Run the int_alg and visualize branch
     start_time = time.time()
 
