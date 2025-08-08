@@ -23,11 +23,11 @@ def alt_main(obs, acs, name="Custom", feature_selection=False,num_iters=200,scal
     print(f"Time taken to run int_alg: {time_taken:.2f} seconds")
 
     # Save results to .npy files
-    with open(f'interpretability_{args.name}.pickle', 'wb') as h:
+    with open(f'interpretability_{name}.pickle', 'wb') as h:
       pickle.dump(data, h)
-    with open(f'interpretability_std_{args.name}.pickle', 'wb') as h:
+    with open(f'interpretability_std_{name}.pickle', 'wb') as h:
       pickle.dump(data_std, h)
-    with open(f'syns_and_reds_{args.name}.pickle', 'wb') as h:
+    with open(f'syns_and_reds_{name}.pickle', 'wb') as h:
       pickle.dump(reds_n_syns, h)
 
     # Visualize results

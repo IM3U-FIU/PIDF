@@ -160,7 +160,7 @@ class int_alg_per_varb_mnist:
                   'heres without', mi_without_ob_num, 'std', mi_without_ob_num_std)
             if self.mi_with_ob_num + 2 * self.mi_with_ob_num_std / math.sqrt(self.expts) < \
                mi_without_ob_num - 2 * mi_without_ob_num_std / math.sqrt(self.expts):
-                print(f'Variable {ob_num} contains net-redundant information with respect too {self.chosen_varb}')
+                print(f'Variable {ob_num} contains net-redundant information with respect to {self.chosen_varb}')
                 self.keepers = new_keepers
                 self.redundants.append(ob_num)
                 self.redundant_reductions.append(self.mi_with_ob_num - mi_without_ob_num)
@@ -169,10 +169,10 @@ class int_alg_per_varb_mnist:
                 self.mi_with_ob_num_std = mi_without_ob_num_std
             elif self.mi_with_ob_num - 2 * self.mi_with_ob_num_std / math.sqrt(self.expts) > \
                  mi_without_ob_num + 2 * mi_without_ob_num_std / math.sqrt(self.expts):
-                print(f'Variable {ob_num} contains net-synergistic information with respect too {self.chosen_varb}')
+                print(f'Variable {ob_num} contains net-synergistic information with respect to {self.chosen_varb}')
                 self.synergistic.append(ob_num)
             else:
-                print(f'Variable {ob_num} contains no net-synergistic information with respect too {self.chosen_varb}')
+                print(f'Variable {ob_num} contains no net-synergistic information with respect to {self.chosen_varb}')
                 self.keepers = new_keepers
                 self.mi_with_ob_num = mi_without_ob_num
                 self.mi_with_ob_num_std = mi_without_ob_num_std
